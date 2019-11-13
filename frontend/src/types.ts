@@ -5,5 +5,5 @@ export interface ChatMessage {
 
 export interface ChatState {
   input: string;
-  message: ChatMessage[];
+  messages: ChatMessage[];
 }

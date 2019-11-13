@@ -34,7 +34,7 @@ export class ChatServer {
     this.io.on(ChatEvent.CONNECT, (socket: any) => {
       console.log('Connected client on port %s.', this.port);
 
-      socket.io(ChatEvent.MESSAGE, (m: ChatMessage) => {
+      socket.on(ChatEvent.MESSAGE, (m: ChatMessage) => {
         console.log('[server](message): %s', JSON.stringify(m));
         this.io.emit('message', m);
       });
